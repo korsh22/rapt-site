@@ -1,0 +1,428 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Экстрим-кэмп в&nbsp;Карелии&nbsp;— RAPT</title>
+<meta name="description" content="Три дня в шхере на севере Ладожского озера: прыжки с верёвкой над водой, сапы, скалолазание, баня на берегу и еда от шефа.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Marck+Script&family=Onest:wght@400;500;600;700;800&display=swap">
+<link rel="stylesheet" href="css/style.css?v=20261120n">
+<link rel="stylesheet" href="css/tour.css?v=20261120n">
+<link rel="icon" href="assets/logo/rapt-logo-dark.svg">
+<!-- Яндекс Метрика: тот же счётчик, что на главной -->
+</head>
+<body class="page-tour">
+<!--
+  ШАБЛОН СТРАНИЦЫ ТУРА. Один дизайн на все туры и прыжки.
+  Чтобы сделать новую страницу: скопировать файл, заменить тексты и фото.
+  Блоки, которые нужны не всем турам, помечены «необязательный» — их можно удалить целиком.
+-->
+
+<a class="skip" href="#main">Перейти к&nbsp;содержанию</a>
+
+<header class="header" id="top">
+  <div class="header__in">
+    <a class="header__logo" href="index.html" aria-label="RAPT — на главную">
+      <img src="assets/logo/rapt-logo-light.svg" alt="RAPT" width="171" height="30">
+    </a>
+    <nav class="nav" id="nav" aria-label="Основное меню">
+      <a href="index.html#tours">Туры</a>
+      <a href="index.html#tours">Расписание</a>
+      <a href="index.html#certificates">Сертификаты</a>
+      <a href="index.html#about">О&nbsp;проекте</a>
+    </nav>
+    <a class="btn btn--ghost header__tg" href="https://t.me/" data-goal="contact_click">Написать в&nbsp;Telegram</a>
+    <button class="burger" type="button" aria-expanded="false" aria-controls="nav" aria-label="Открыть меню"><span></span><span></span></button>
+  </div>
+</header>
+
+<main id="main">
+
+  <!-- 1. Первый экран тура: рукописное слово + крупный заголовок, внизу — «доверие» и плашка с главной цифрой -->
+  <section class="t-hero" aria-labelledby="t-title">
+    <img class="t-hero__bg" src="assets/img/karelia-camp.jpg" alt="Прыжок с верёвкой со скалы над Ладожским озером" fetchpriority="high">
+    <a class="t-back" href="index.html#tours">Все туры</a>
+    <div class="t-hero__in">
+      <h1 class="t-hero__title" id="t-title"><span class="t-hero__script">Карелия</span><span class="t-hero__big">Экстрим-кэмп</span></h1>
+      <p class="t-hero__lead">Три дня в&nbsp;шхере на&nbsp;Ладоге: прыжки над&nbsp;водой, баня на&nbsp;берегу и&nbsp;никакого города</p>
+      <div class="t-hero__cta">
+        <a class="btn btn--red btn--lg" href="#book">Записаться</a>
+        <a class="round" href="#program" aria-label="Смотреть программу"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17 17 7M8 7h9v9"/></svg></a>
+      </div>
+    </div>
+    <div class="t-trust">
+      <div class="faces" aria-hidden="true"><img src="assets/img/faces/f1.jpg" alt=""><img src="assets/img/faces/f2.jpg" alt=""><img src="assets/img/faces/f3.jpg" alt=""><img src="assets/img/faces/f4.jpg" alt=""></div>
+      <p>С&nbsp;нами уже<br><b>2&nbsp;000+ человек</b></p>
+    </div>
+    <div class="t-badge">
+      <div class="faces faces--sm" aria-hidden="true"><img src="assets/img/faces/f5.jpg" alt=""><img src="assets/img/faces/f6.jpg" alt=""><img src="assets/img/faces/f2.jpg" alt=""></div>
+      <p class="t-badge__n">35 м</p>
+      <p class="t-badge__d">скала над&nbsp;водой</p>
+    </div>
+  </section>
+
+  <!-- 2. О выезде: слева текст, по центру — фото-слайдер «Яркие моменты», справа — факты и отзыв -->
+  <section class="ov" aria-labelledby="ov-title">
+    <div class="wrap ov__in">
+      <div class="ov__text">
+        <p class="ov__over"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m12 2 2.9 6.9L22 9.3l-5.5 4.7 1.7 7.3L12 17.6 5.8 21.3l1.7-7.3L2 9.3l7.1-.4L12 2Z"/></svg>О&nbsp;выезде</p>
+        <h2 class="ov__title" id="ov-title">Три дня, когда каждый день не&nbsp;похож на&nbsp;другой&nbsp;— <span>Ладога</span></h2>
+        <ul class="ov__tags">
+          <li>Прыжки над&nbsp;водой</li>
+          <li>Сапы</li>
+          <li>Баня на&nbsp;берегу</li>
+        </ul>
+        <p class="ov__p">Уединённая шхера на&nbsp;севере Ладожского озера. Прыжки с&nbsp;35-метровой скалы, скалолазание, гамаки и&nbsp;костёр, еда от&nbsp;шеф-повара и&nbsp;большая компания крутых ребят. Тотальная перезагрузка от&nbsp;городской суеты.</p>
+        <a class="link-arrow" href="#program">Смотреть программу<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17 17 7M8 7h9v9"/></svg></a>
+      </div>
+
+      <div class="hl" aria-roledescription="карусель" aria-label="Яркие моменты">
+        <ul class="hl__track" id="hl-track">
+          <li><img src="assets/img/karelia-jump-v.jpg" alt="Прыжок с верёвкой со скалы над водой" loading="lazy"><div class="hl__cap"><h3>Три прыжка над&nbsp;водой</h3><p>С&nbsp;35-метровой скалы прямо над&nbsp;Ладогой</p></div></li>
+          <li><img src="assets/img/karelia-sup.jpg" alt="Участники на сапах" loading="lazy"><div class="hl__cap"><h3>Сапы по&nbsp;шхерам</h3><p>Тихая вода и&nbsp;виды северной природы</p></div></li>
+          <li><img src="assets/img/climb.jpg" alt="Участница лезет по скале" loading="lazy"><div class="hl__cap"><h3>Скалолазание</h3><p>С&nbsp;инструктором и&nbsp;страховкой</p></div></li>
+          <li><img src="assets/img/hammock.jpg" alt="Гамаки в лагере" loading="lazy"><div class="hl__cap"><h3>Уютный лагерь</h3><p>Гамаки, слэклайн, дартс и&nbsp;лучный тир</p></div></li>
+          <li><img src="assets/img/karelia-food.jpg" alt="Ужин в котелке на костре" loading="lazy"><div class="hl__cap"><h3>Еда от&nbsp;шефа</h3><p>Трёхразовое питание и&nbsp;баня вечером</p></div></li>
+        </ul>
+        <p class="hl__label">Яркие моменты</p>
+        <div class="hl__nav">
+          <button type="button" data-hl="-1" aria-label="Предыдущее фото">‹</button>
+          <button type="button" data-hl="1" aria-label="Следующее фото">›</button>
+        </div>
+      </div>
+
+      <div class="ov__side">
+        <dl class="ov__facts">
+          <div><dt>Где</dt><dd>Импилахти, Ладога</dd></div>
+          <div><dt>Когда</dt><dd>[даты]</dd></div>
+          <div><dt>Сколько</dt><dd>3 дня</dd></div>
+          <div><dt>Стоимость</dt><dd>от [цена] ₽</dd></div>
+        </dl>
+        <div class="story">
+          <span class="story__ava" aria-hidden="true">В</span>
+          <p class="story__q">«Лучший отдых в&nbsp;моей жизни. Вы продумали все мелочи, все детали»</p>
+          <p class="story__who">Виолетта, Карелия 2024</p>
+          <a class="link-arrow" href="#review">Читать отзыв<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17 17 7M8 7h9v9"/></svg></a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 3. Программа по дням: сначала фото, подробности под катом -->
+  <section class="t-prog" id="program" aria-labelledby="program-title">
+    <div class="wrap">
+      <h2 class="h2" id="program-title">Программа</h2>
+      <ol class="days">
+        <li class="day">
+          <div class="day__side">
+            <div class="day__head">
+            <p class="day__n"><span>День</span>01</p>
+            <h3 class="day__title">Дорога, заброска на&nbsp;лодках, вечер знакомств</h3>
+          </div>
+            <details class="day__more">
+            <summary>Как&nbsp;проходит день</summary>
+            <p>В&nbsp;14:00 садимся в&nbsp;автобус у&nbsp;метро «Проспект Просвещения». До&nbsp;Импилахти около 5 часов&nbsp;— бери перекус и&nbsp;музыку. В&nbsp;Импилахти пересаживаемся на&nbsp;лодки: 40 минут по&nbsp;Ладоге до&nbsp;соседней шхеры. В&nbsp;лагере ждёт ужин, расскажем о&nbsp;выходных, ставим палатки и&nbsp;отдыхаем.</p>
+          </details>
+          </div>
+          <ul class="day__photos">
+            <li><img src="assets/img/boat.jpg" alt="Участники на лодке по пути в лагерь" loading="lazy"><p>Заброска на&nbsp;лодках по&nbsp;шхерам</p></li>
+            <li><img src="assets/img/karelia-rock.jpg" alt="Девушка сидит на скале у воды" loading="lazy"><p>Виды северной природы</p></li>
+            <li><img src="assets/img/hammock.jpg" alt="Отдых в гамаках" loading="lazy"><p>Ужин и&nbsp;знакомство в&nbsp;лагере</p></li>
+          </ul>
+        </li>
+        <li class="day">
+          <div class="day__side">
+            <div class="day__head">
+            <p class="day__n"><span>День</span>02</p>
+            <h3 class="day__title">Прыжки и&nbsp;активности, вечером баня и&nbsp;живая музыка</h3>
+          </div>
+            <details class="day__more">
+            <summary>Как&nbsp;проходит день</summary>
+            <p>Во&nbsp;сколько просыпаться&nbsp;— каждый решает сам. Завтрак с&nbsp;8:30 до&nbsp;9:30, на&nbsp;нём же&nbsp;записываемся на&nbsp;прыжки. Дальше кто прыгает, кто купается, кто стреляет из&nbsp;лука, кто валяется в&nbsp;гамаке. В&nbsp;середине дня обед. Вечером ужин, костёр, баня на&nbsp;берегу озера и&nbsp;музыка.</p>
+          </details>
+          </div>
+          <ul class="day__photos">
+            <li><img src="assets/img/karelia-jump-v.jpg" alt="Прыжок над водой" loading="lazy"><p>Прыжки над&nbsp;водой</p></li>
+            <li><img src="assets/img/climb.jpg" alt="Скалолазание" loading="lazy"><p>Скалолазание</p></li>
+            <li><img src="assets/img/karelia-food.jpg" alt="Ужин на костре" loading="lazy"><p>Ужин, костёр и&nbsp;баня</p></li>
+          </ul>
+        </li>
+        <li class="day">
+          <div class="day__side">
+            <div class="day__head">
+            <p class="day__n"><span>День</span>03</p>
+            <h3 class="day__title">Чилим на&nbsp;сапах, последние прыжки, дорога домой</h3>
+          </div>
+            <details class="day__more">
+            <summary>Как&nbsp;проходит день</summary>
+            <p>Завтрак с&nbsp;9:00 до&nbsp;10:00, потом прыгаем, купаемся и&nbsp;отдыхаем. Обед с&nbsp;14:00 до&nbsp;15:00, собираем вещи. В&nbsp;15:00 лодки везут нас в&nbsp;Импилахти, в&nbsp;16:00 стартует автобус. В&nbsp;Петербурге около 23:00. Если едешь из&nbsp;другого города, бери обратные билеты не&nbsp;раньше полуночи: автобус может задержаться в&nbsp;пробках.</p>
+          </details>
+          </div>
+          <ul class="day__photos">
+            <li><img src="assets/img/karelia-sup.jpg" alt="Сапы на озере" loading="lazy"><p>Сапы</p></li>
+            <li><img src="assets/img/karelia-camp.jpg" alt="Прыжок над озером" loading="lazy"><p>Последние прыжки</p></li>
+            <li><img src="assets/img/chair.jpg" alt="Отдых в шезлонге на скале" loading="lazy"><p>Отдых перед дорогой</p></li>
+          </ul>
+        </li>
+      </ol>
+    </div>
+  </section>
+
+  <!-- 4. Даты и стоимость -->
+  <section class="t-price" id="book" aria-labelledby="price-title">
+    <div class="wrap t-price__in">
+      <div>
+        <h2 class="h2" id="price-title">Даты и&nbsp;стоимость</h2>
+        <ul class="dates">
+          <li><span>[дата 1]</span><span class="dates__st dates__st--hot">Осталось [N] места</span></li>
+          <li><span>[дата 2]</span><span class="dates__st">Есть места</span></li>
+          <li><span>[дата 3]</span><span class="dates__st">Есть места</span></li>
+          <li class="dates__full"><span>[дата 4]</span><span class="dates__st">Мест нет</span></li>
+        </ul>
+      </div>
+      <div class="prices">
+        <table>
+          <caption class="sr">Стоимость участия</caption>
+          <tbody>
+            <tr><th scope="row">С&nbsp;трансфером</th><td>[цена] ₽</td></tr>
+            <tr><th scope="row">Без&nbsp;трансфера</th><td>[цена] ₽</td></tr>
+            <tr><th scope="row">Без&nbsp;прыжков</th><td>[цена] ₽</td></tr>
+            <tr><th scope="row">Без&nbsp;прыжков и&nbsp;трансфера</th><td>[цена] ₽</td></tr>
+            <tr><th scope="row">Разовый прыжок<br><span>приехать, прыгнуть и&nbsp;уехать</span></th><td>[цена] ₽</td></tr>
+          </tbody>
+        </table>
+        <ul class="prices__notes">
+          <li>Скидка [сумма] ₽ при&nbsp;полной оплате до [дата]</li>
+          <li>Всем, кто уже ездил с&nbsp;нами в&nbsp;Карелию,&nbsp;— скидка 10%</li>
+        </ul>
+        <a class="btn btn--red" href="#form">Записаться</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- 5. Что входит -->
+  <section class="t-sec" aria-labelledby="inc-title">
+    <div class="wrap inc">
+      <div>
+        <h2 class="h2" id="inc-title">Что&nbsp;входит</h2>
+        <ul class="inc__list">
+          <li>Трансфер Петербург&nbsp;— Импилахти&nbsp;— Петербург</li>
+          <li>Заброска на&nbsp;лодках до&nbsp;лагеря и&nbsp;обратно</li>
+          <li>Трёхразовое питание от&nbsp;шеф-повара</li>
+          <li>Лагерь с&nbsp;гамаками, слэклайном, дартсом и&nbsp;лучным тиром</li>
+          <li>Три прыжка с&nbsp;35-метровой скалы над&nbsp;водой</li>
+          <li>Скалолазание и&nbsp;сапы</li>
+          <li>Баня на&nbsp;берегу Ладожского озера</li>
+          <li>Фото и&nbsp;видео: на&nbsp;кэмпе два фотографа</li>
+        </ul>
+      </div>
+      <div>
+        <h3 class="inc__h3">Не&nbsp;входит</h3>
+        <ul class="inc__list inc__list--no">
+          <li>Палатка, пенка, спальник</li>
+          <li>Миска, кружка и&nbsp;ложка</li>
+        </ul>
+        <p class="inc__note">Нет своего снаряжения&nbsp;— арендуй у&nbsp;нас. Привезём, поставим и&nbsp;потом сами соберём. С&nbsp;собой останется взять посуду и&nbsp;одежду.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- 6. Безопасность (коротко; подробно — на главной) -->
+  <section class="t-safety" aria-labelledby="ts-title">
+    <div class="wrap t-safety__in">
+      <img src="assets/img/team.jpg" alt="Команда RAPT и участники в касках на скале" loading="lazy">
+      <div>
+        <h2 class="h2" id="ts-title">Безопасность</h2>
+        <p>Прыжки проводит команда, которая занимается этим с&nbsp;2007 года. Перед каждым прыжком систему проверяют два инструктора, все элементы дублируются, снаряжение&nbsp;— только сертифицированное UIAA.</p>
+        <p>Прыгнуть может и&nbsp;новичок. Есть противопоказания&nbsp;— проверь список перед записью.</p>
+        <a class="btn btn--ghost" href="index.html#safety-title">Как&nbsp;устроены прыжки</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- 7. Вопросы. Ответы со скобками — уточнить у заказчика -->
+  <section class="faq-sec" id="faq" aria-labelledby="faq-title">
+    <div class="wrap">
+      <h2 class="faq-sec__title" id="faq-title">Знаем, что&nbsp;тебя <span class="mark">волнует</span></h2>
+      <div class="qa">
+        <details class="qa__item"><summary>Подойдёт ли&nbsp;это&nbsp;новичку?</summary><div class="qa__a"><p>Да. Опыт не&nbsp;нужен: инструктор всё объяснит, наденет и&nbsp;проверит снаряжение.</p></div></details>
+        <details class="qa__item"><summary>Можно ли&nbsp;поехать одному?</summary><div class="qa__a"><p>Конечно, многие так и&nbsp;едут. До&nbsp;старта добавим тебя в&nbsp;общий чат группы, а&nbsp;в&nbsp;лагере компания складывается в&nbsp;первый же&nbsp;вечер.</p></div></details>
+        <details class="qa__item"><summary>Где будем жить?</summary><div class="qa__a"><p>В&nbsp;палатках в&nbsp;обустроенном лагере на&nbsp;берегу. Палатку можно взять свою или&nbsp;арендовать у&nbsp;нас&nbsp;— поставим и&nbsp;соберём сами.</p></div></details>
+        <details class="qa__item"><summary>Что&nbsp;будем есть?</summary><div class="qa__a"><p>Трёхразовое питание от&nbsp;шеф-повара. Участники говорят, что&nbsp;как&nbsp;в&nbsp;ресторане,&nbsp;— хотя это&nbsp;поход.</p></div></details>
+        <details class="qa__item"><summary>Что&nbsp;взять с&nbsp;собой?</summary><div class="qa__a"><p>Миску, кружку, ложку и&nbsp;одежду по&nbsp;погоде. Палатку, пенку и&nbsp;спальник&nbsp;— если есть свои, иначе арендуй у&nbsp;нас.</p></div></details>
+        <details class="qa__item"><summary>Будут ли&nbsp;фото и&nbsp;видео?</summary><div class="qa__a"><p>Да, на&nbsp;кэмпе работают два фотографа. Материалы выкладываем в&nbsp;чате участников.</p></div></details>
+        <details class="qa__item"><summary>Сколько будет участников?</summary><div class="qa__a"><p>[ответ]</p></div></details>
+        <details class="qa__item"><summary>Что&nbsp;если будет плохая погода?</summary><div class="qa__a"><p>Безопасность важнее расписания: в&nbsp;непогоду прыжки переносим на&nbsp;другое время. Программу планируем с&nbsp;запасом, чтобы успеть всё.</p></div></details>
+      </div>
+    </div>
+  </section>
+
+  <!-- 8. Отзыв (необязательный) -->
+  <section class="t-quote" id="review" aria-label="Отзыв участницы">
+    <div class="wrap">
+      <div class="t-quote__in">
+        <blockquote>«Спасибо команде. Честно, не&nbsp;ожидала, что&nbsp;будет настолько круто. Вы продумали все мелочи, все детали. Вы обустроили для&nbsp;нас небольшой интересный мир, где в&nbsp;каждом уголке находишь что-нибудь новое»</blockquote>
+        <p class="review__who">Виолетта, Санкт-Петербург<br><span>Карелия, июль и&nbsp;август 2024</span></p>
+      </div>
+    </div>
+  </section>
+
+  <!-- 9. Заявка: тёмный продающий блок, как на главной. Даты и варианты — свои для каждого тура -->
+  <section class="apply apply--sell" id="form" aria-labelledby="apply-title">
+    <img class="apply__bg" src="assets/img/karelia-rock.jpg" alt="" loading="lazy">
+    <div class="wrap apply__in">
+
+      <div class="apply__lead">
+        <p class="pill pill--light">Лето 2027</p>
+        <h2 class="apply__title" id="apply-title">Забронируй место в&nbsp;Карелии</h2>
+        <p class="apply__sub">Едем небольшой группой, поэтому места на&nbsp;летние даты заканчиваются быстро. Заявка ни&nbsp;к&nbsp;чему не&nbsp;обязывает.</p>
+        <ol class="steps">
+          <li><b>Оставляешь заявку</b><span>Займёт минуту</span></li>
+          <li><b>Связываемся с&nbsp;тобой</b><span>Отвечаем на&nbsp;вопросы и&nbsp;подтверждаем даты</span></li>
+          <li><b>Бронируешь место</b><span>И&nbsp;попадаешь в&nbsp;чат своей группы</span></li>
+        </ol>
+        <p class="hot"><i aria-hidden="true"></i>[дата 1]: осталось [N] места</p>
+      </div>
+      <form class="form" id="apply" novalidate>
+        <fieldset class="field">
+          <legend>Даты</legend>
+          <div class="chips">
+            <label class="chip"><input type="radio" name="date" value="[дата 1]" checked><span>[дата 1]</span></label>
+            <label class="chip"><input type="radio" name="date" value="[дата 2]"><span>[дата 2]</span></label>
+            <label class="chip"><input type="radio" name="date" value="[дата 3]"><span>[дата 3]</span></label>
+            <label class="chip"><input type="radio" name="date" value="Пока не знаю"><span>Пока не&nbsp;знаю</span></label>
+          </div>
+        </fieldset>
+        <fieldset class="field">
+          <legend>Вариант участия</legend>
+          <div class="chips">
+            <label class="chip"><input type="radio" name="option" value="С трансфером" checked><span>С&nbsp;трансфером</span></label>
+            <label class="chip"><input type="radio" name="option" value="Без трансфера"><span>Без&nbsp;трансфера</span></label>
+            <label class="chip"><input type="radio" name="option" value="Без прыжков"><span>Без&nbsp;прыжков</span></label>
+            <label class="chip"><input type="radio" name="option" value="Без прыжков и трансфера"><span>Без&nbsp;прыжков и&nbsp;трансфера</span></label>
+            <label class="chip"><input type="radio" name="option" value="Разовый прыжок"><span>Разовый прыжок</span></label>
+          </div>
+        </fieldset>
+        <div class="form__row">
+          <label class="field">
+            <span>Имя</span>
+            <input type="text" name="name" autocomplete="given-name" required>
+          </label>
+          <label class="field">
+            <span>Телефон или&nbsp;ник в&nbsp;Telegram</span>
+            <input type="text" name="contact" autocomplete="tel" required>
+          </label>
+        </div>
+        <fieldset class="field">
+          <legend>Как&nbsp;удобнее связаться</legend>
+          <div class="chips">
+            <label class="chip"><input type="radio" name="via" value="telegram" checked><span>Telegram</span></label>
+            <label class="chip"><input type="radio" name="via" value="email"><span>Почта</span></label>
+            <label class="chip"><input type="radio" name="via" value="call"><span>Позвонить</span></label>
+          </div>
+        </fieldset>
+        <label class="check">
+          <input type="checkbox" name="agree" required>
+          <span>Даю согласие на&nbsp;обработку персональных данных по <a href="#">политике конфиденциальности</a></span>
+        </label>
+        <p class="form__error" id="form-error" role="alert" hidden></p>
+        <button class="btn btn--red form__btn" type="submit">Отправить заявку</button>
+        <p class="form__note">Ни&nbsp;к&nbsp;чему не&nbsp;обязывает. Ответим удобным тебе способом</p>
+        <div class="form__done" id="form-done" hidden tabindex="-1">
+          <svg class="form__ok" viewBox="0 0 52 52" aria-hidden="true"><circle cx="26" cy="26" r="24" pathLength="1"/><path d="M15 27l7 7 15-16" pathLength="1"/></svg>
+          <h3>Заявка отправлена</h3>
+          <p>Скоро свяжемся с&nbsp;тобой. А&nbsp;пока можно написать нам в <a href="https://t.me/" data-goal="contact_click">Telegram</a>.</p>
+        </div>
+      </form>
+    </div>
+  </section>
+
+  <!-- 10. Другие туры -->
+  <section class="tours tours--more" aria-labelledby="tours-title">
+    <div class="wrap tours__head">
+      <h2 class="h2" id="tours-title">Другие туры</h2>
+      <div class="tours__arrows">
+        <button class="arrow" type="button" data-dir="-1" aria-label="Предыдущие туры">←</button>
+        <button class="arrow" type="button" data-dir="1" aria-label="Следующие туры">→</button>
+      </div>
+    </div>
+    <ul class="track" id="track">
+      <li class="card">
+        <img class="card__img" src="assets/img/caucasus.jpg" alt="Девушка сидит над каньоном на Кавказе" loading="lazy">
+        <div class="card__body">
+          <p class="badge">Набираем группу</p>
+          <h3 class="card__title">Кавказ</h3>
+          <p class="card__meta">[даты], [N] дней<br>от [цена] ₽</p>
+          <a class="btn btn--line" href="#">Подробнее</a>
+        </div>
+      </li>
+      <li class="card">
+        <img class="card__img" src="assets/img/karelia-sup.jpg" alt="Участники на сапах на озере в Карелии" loading="lazy">
+        <div class="card__body">
+          <p class="badge">Набираем группу</p>
+          <h3 class="card__title">Карелия: второй формат</h3>
+          <p class="card__meta">[даты], [N] дней<br>от [цена] ₽</p>
+          <a class="btn btn--line" href="#">Подробнее</a>
+        </div>
+      </li>
+      <li class="card">
+        <div class="card__img card__img--empty">Фото появится</div>
+        <div class="card__body">
+          <p class="badge badge--soft">Скоро анонс</p>
+          <h3 class="card__title">Марокко</h3>
+          <p class="card__meta">[даты], [N] дней<br>от [цена] ₽</p>
+          <a class="btn btn--line" href="#">Подробнее</a>
+        </div>
+      </li>
+      <li class="card">
+        <div class="card__img card__img--empty">Фото появится</div>
+        <div class="card__body">
+          <p class="badge badge--soft">Скоро анонс</p>
+          <h3 class="card__title">Япония</h3>
+          <p class="card__meta">[даты], [N] дней<br>от [цена] ₽</p>
+          <a class="btn btn--line" href="#">Подробнее</a>
+        </div>
+      </li>
+    </ul>
+    <div class="wrap">
+      <a class="btn btn--dark" href="index.html#tours">Всё расписание</a>
+    </div>
+  </section>
+
+</main>
+
+<!-- Липкая кнопка записи на телефоне -->
+<div class="stick" id="stick" aria-hidden="true">
+  <p>от [цена] ₽<span>3 дня, Ладога</span></p>
+  <a class="btn btn--red" href="#form" tabindex="-1">Записаться</a>
+</div>
+
+<footer class="footer">
+  <div class="wrap footer__in">
+    <img src="assets/logo/rapt-logo-light.svg" alt="RAPT" width="171" height="30">
+    <nav class="footer__nav" aria-label="Разделы">
+      <a href="index.html#tours">Туры</a>
+      <a href="index.html#tours">Расписание</a>
+      <a href="index.html#certificates">Сертификаты</a>
+      <a href="index.html#about">О&nbsp;проекте</a>
+    </nav>
+    <div class="footer__contacts">
+      <a href="https://t.me/" data-goal="contact_click">Telegram</a>
+      <a href="https://vk.com/" data-goal="contact_click">ВКонтакте</a>
+      <a href="https://instagram.com/" data-goal="contact_click">Instagram</a>
+      <a href="tel:+7" data-goal="contact_click">[телефон]</a>
+      <a href="mailto:" data-goal="contact_click">[почта]</a>
+    </div>
+    <div class="footer__legal">
+      <p>© RAPT, 2007–2026</p>
+      <a href="#">Политика конфиденциальности</a>
+      <p>[ИП / ООО, ИНН]</p>
+    </div>
+  </div>
+</footer>
+
+<script src="js/main.js?v=20261120n" defer></script>
+</body>
+</html>

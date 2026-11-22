@@ -1,0 +1,689 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>RAPT&nbsp;— туры с&nbsp;прыжками и&nbsp;роупджампинг</title>
+<meta name="description" content="RAPT: путешествия, где главное событие — прыжок со скалы. Команда проводит прыжки с 2007 года. Карелия, Кавказ, Марокко, Япония и другие направления.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Onest:wght@400;500;600;700&display=swap">
+<link rel="stylesheet" href="css/style.css?v=20261120n">
+<link rel="icon" href="assets/logo/rapt-logo-dark.svg">
+<!-- Яндекс Метрика: вставить счётчик сюда. Цели: отправка формы (form_sent), клики по Telegram / телефону / почте (contact_click) -->
+</head>
+<body>
+
+<a class="skip" href="#main">Перейти к&nbsp;содержанию</a>
+
+<header class="header" id="top">
+  <div class="header__in">
+    <a class="header__logo" href="#top" aria-label="RAPT — на главную">
+      <img src="assets/logo/rapt-logo-light.svg" alt="RAPT" width="171" height="30">
+    </a>
+    <nav class="nav" id="nav" aria-label="Основное меню">
+      <a href="#tours">Туры</a>
+      <a href="#tours">Расписание</a>
+      <a href="#certificates">Сертификаты</a>
+      <a href="#about">О&nbsp;проекте</a>
+    </nav>
+    <a class="btn btn--ghost header__tg" href="https://t.me/" data-goal="contact_click">Написать в&nbsp;Telegram</a>
+    <button class="burger" type="button" aria-expanded="false" aria-controls="nav" aria-label="Открыть меню"><span></span><span></span></button>
+  </div>
+</header>
+
+<main id="main">
+
+  <!-- 1. Первый экран: слайдер. Слайды листаются сами, полоски сверху показывают прогресс.
+       Первый слайд — позиционирование, дальше — главные туры сезона.
+       Фон у всех слайдов общий — одно видео без звука; листаются только тексты и кнопки -->
+  <section class="slider" id="slider" aria-roledescription="карусель" aria-label="Главное">
+    <video class="slider__video" autoplay muted loop playsinline poster="assets/video/cert-hero-poster.jpg" aria-hidden="true">
+      <source src="assets/video/cert-hero.mp4" type="video/mp4">
+    </video>
+    <div class="slider__shade" aria-hidden="true"></div>
+
+    <div class="slider__bars" role="tablist" aria-label="Выбор слайда">
+      <button role="tab" aria-label="Слайд 1: RAPT" aria-selected="true"><i></i></button>
+      <button role="tab" aria-label="Слайд 2: Карелия"><i></i></button>
+      <button role="tab" aria-label="Слайд 3: Кавказ"><i></i></button>
+      <button role="tab" aria-label="Слайд 4: Сертификат"><i></i></button>
+    </div>
+
+    <div class="slide is-active" aria-roledescription="слайд" aria-label="1 из 4">
+      <div class="slide__in">
+        <h1 class="slide__title">19&nbsp;лет нам доверяют жизнь. Теперь&nbsp;— отпуск</h1>
+        <p class="slide__sub">Путешествия, где главное событие&nbsp;— прыжок со&nbsp;скалы</p>
+        <div class="slide__btns">
+          <a class="btn btn--red btn--lg" href="#tours">Выбрать тур</a>
+          <a class="btn btn--white btn--lg" href="#numbers">О&nbsp;нас в&nbsp;цифрах</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="slide" aria-roledescription="слайд" aria-label="2 из 4" aria-hidden="true">
+      <div class="slide__in">
+        <p class="slide__tag">Лето 2027</p>
+        <h2 class="slide__title">Карелия: три дня без&nbsp;города</h2>
+        <p class="slide__sub">Шхера на&nbsp;Ладоге, прыжки над&nbsp;водой, баня на&nbsp;берегу</p>
+        <div class="slide__btns"><a class="btn btn--white btn--lg" href="tour.html" tabindex="-1">Смотреть программу</a></div>
+      </div>
+    </div>
+
+    <div class="slide" aria-roledescription="слайд" aria-label="3 из 4" aria-hidden="true">
+      <div class="slide__in">
+        <p class="slide__tag">Набираем группу</p>
+        <h2 class="slide__title">Кавказ: каньоны, горы и&nbsp;прыжки</h2>
+        <p class="slide__sub">7–14 августа 2027, 8 дней</p>
+        <div class="slide__btns"><a class="btn btn--white btn--lg" href="#tours" tabindex="-1">Подробнее</a></div>
+      </div>
+    </div>
+
+    <div class="slide" aria-roledescription="слайд" aria-label="4 из 4" aria-hidden="true">
+      <div class="slide__in">
+        <p class="slide__tag">Подарок</p>
+        <h2 class="slide__title">Сертификат на&nbsp;прыжок, который запомнят</h2>
+        <p class="slide__sub">На&nbsp;конкретную высоту или&nbsp;на&nbsp;любой тур</p>
+        <div class="slide__btns"><a class="btn btn--white btn--lg" href="#certificates" tabindex="-1">Выбрать сертификат</a></div>
+      </div>
+    </div>
+
+    <a class="slider__down" href="#tours" aria-label="Листать вниз">↓</a>
+  </section>
+
+  <!-- 3. Ближайшие туры. Даты, цены и места — пока рыба, заменить на настоящие.
+       Фото в карточке: несколько <img> внутри .card__ph--gallery, при наведении они листаются по движению мыши.
+       Полоса «занято N из M мест»: в style у .seats задаётся --fill (доля занятых мест, от 0 до 1) -->
+  <section class="tours" id="tours" aria-labelledby="tours-title">
+    <svg width="0" height="0" style="position:absolute" aria-hidden="true">
+      <symbol id="i-jump" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v12m0 0-4-4m4 4 4-4M5 21h14"/></symbol>
+      <symbol id="i-level" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3 4 6v6c0 4.5 3.4 8.3 8 9 4.6-.7 8-4.5 8-9V6l-8-3Z"/><path d="m8.5 12 2.5 2.5 4.5-5"/></symbol>
+      <symbol id="i-home" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 11 12 4l9 7"/><path d="M5 10v10h14V10"/><path d="M10 20v-5h4v5"/></symbol>
+      <symbol id="i-plane" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M10.5 13.5 3 11l1.5-1.5 8 1L17 6a2.1 2.1 0 0 1 3 3l-4.5 4.5 1 8L15 23l-2.5-7.5"/></symbol>
+    </svg>
+    <div class="wrap tours__head">
+      <div>
+        <h2 class="h2" id="tours-title">Ближайшие туры</h2>
+        <p class="tours__lead">Выезды с&nbsp;прыжками на&nbsp;2027 год. Едем небольшой группой, дорогу, жильё, снаряжение и&nbsp;инструкторов берём на&nbsp;себя&nbsp;— тебе остаётся выбрать даты.</p>
+      </div>
+      <div class="tours__arrows">
+        <button class="arrow" type="button" data-dir="-1" aria-label="Предыдущие туры">←</button>
+        <button class="arrow" type="button" data-dir="1" aria-label="Следующие туры">→</button>
+      </div>
+    </div>
+
+    <!-- Порядок карточек задаётся вручную: горящие и плохо набирающиеся направления — первыми -->
+    <ul class="track" id="track">
+      <li class="card" style="--i:0">
+        <div class="card__ph card__ph--gallery"><img class="card__img" src="assets/img/karelia-camp.jpg" alt="Прыжок с верёвкой над озером в Карелии" loading="lazy"><img class="card__img" src="assets/img/karelia-jump-v.jpg" alt="Прыжок со скалы над водой" loading="lazy"><img class="card__img" src="assets/img/hammock.jpg" alt="Гамаки в лагере" loading="lazy"><img class="card__img" src="assets/img/karelia-food.jpg" alt="Ужин на костре" loading="lazy"></div>
+        <div class="card__body">
+          <p class="badge badge--hot">Осталось 3 места</p>
+          <h3 class="card__title">Карелия: экстрим-кэмп</h3>
+          <p class="card__meta">12–14 июня 2027 · 3 дня<br><b>от&nbsp;34 900 ₽</b></p>
+          <ul class="facts">
+            <li><svg class="ico"><use href="#i-jump"/></svg>Прыжки с&nbsp;верёвкой над&nbsp;Ладогой</li>
+            <li><svg class="ico"><use href="#i-level"/></svg>Без&nbsp;опыта&nbsp;— всему научим на&nbsp;месте</li>
+            <li><svg class="ico"><use href="#i-home"/></svg>Палатки, баня и&nbsp;еда уже в&nbsp;цене</li>
+          </ul>
+          <div class="seats" style="--fill:0.750">
+            <p class="seats__label">Занято 9 из&nbsp;12 мест</p>
+            <div class="seats__bar"><i></i></div>
+          </div>
+          <a class="btn btn--line" href="tour.html">Подробнее</a>
+        </div>
+      </li>
+      <li class="card" style="--i:1">
+        <div class="card__ph card__ph--gallery"><img class="card__img" src="assets/img/caucasus.jpg" alt="Девушка сидит над каньоном на Кавказе" loading="lazy"><img class="card__img" src="assets/img/climb.jpg" alt="Скалолазание" loading="lazy"><img class="card__img" src="assets/img/group.jpg" alt="Участники на скалах" loading="lazy"></div>
+        <div class="card__body">
+          <p class="badge">Набираем группу</p>
+          <h3 class="card__title">Кавказ</h3>
+          <p class="card__meta">7–14 августа 2027 · 8 дней<br><b>от&nbsp;79 000 ₽</b></p>
+          <ul class="facts">
+            <li><svg class="ico"><use href="#i-jump"/></svg>Прыжки над&nbsp;Сулакским каньоном</li>
+            <li><svg class="ico"><use href="#i-level"/></svg>Подойдёт новичкам</li>
+            <li><svg class="ico"><use href="#i-home"/></svg>Гостевой дом и&nbsp;трансферы включены</li>
+          </ul>
+          <div class="seats" style="--fill:0.357">
+            <p class="seats__label">Занято 5 из&nbsp;14 мест</p>
+            <div class="seats__bar"><i></i></div>
+          </div>
+          <a class="btn btn--line" href="#">Подробнее</a>
+        </div>
+      </li>
+      <li class="card" style="--i:2">
+        <div class="card__ph card__ph--gallery"><img class="card__img" src="assets/img/karelia-sup.jpg" alt="Участники на сапах на озере в Карелии" loading="lazy"><img class="card__img" src="assets/img/boat.jpg" alt="Заброска на лодке по Ладоге" loading="lazy"><img class="card__img" src="assets/img/karelia-rock.jpg" alt="Скала у воды" loading="lazy"><img class="card__img" src="assets/img/chair.jpg" alt="Отдых в шезлонге у озера" loading="lazy"></div>
+        <div class="card__body">
+          <p class="badge">Набираем группу</p>
+          <h3 class="card__title">Карелия: второй формат</h3>
+          <p class="card__meta">22–26 июля 2027 · 5 дней<br><b>от&nbsp;49 900 ₽</b></p>
+          <ul class="facts">
+            <li><svg class="ico"><use href="#i-jump"/></svg>Два дня прыжков и&nbsp;день на&nbsp;сапах</li>
+            <li><svg class="ico"><use href="#i-level"/></svg>Без&nbsp;опыта</li>
+            <li><svg class="ico"><use href="#i-home"/></svg>Домики у&nbsp;воды и&nbsp;баня включены</li>
+          </ul>
+          <div class="seats" style="--fill:0.500">
+            <p class="seats__label">Занято 6 из&nbsp;12 мест</p>
+            <div class="seats__bar"><i></i></div>
+          </div>
+          <a class="btn btn--line" href="#">Подробнее</a>
+        </div>
+      </li>
+      <li class="card" style="--i:3">
+        <div class="card__ph"><div class="card__img card__img--soon" aria-hidden="true"><span>Марокко</span><small>Фото с&nbsp;разведки&nbsp;— скоро</small></div></div>
+        <div class="card__body">
+          <p class="badge badge--soft">Скоро анонс</p>
+          <h3 class="card__title">Марокко</h3>
+          <p class="card__meta">Октябрь 2027 · 9 дней<br><b>от&nbsp;129 000 ₽</b></p>
+          <ul class="facts">
+            <li><svg class="ico"><use href="#i-jump"/></svg>Прыжки в&nbsp;ущелье Тодра</li>
+            <li><svg class="ico"><use href="#i-home"/></svg>Ночь в&nbsp;лагере в&nbsp;пустыне</li>
+            <li><svg class="ico"><use href="#i-plane"/></svg>Перелёт оплачивается отдельно</li>
+          </ul>
+          <p class="seats__label seats__label--wait">Уже в&nbsp;листе ожидания: 7 человек</p>
+          <a class="btn btn--line" href="#">Подробнее</a>
+        </div>
+      </li>
+      <li class="card" style="--i:4">
+        <div class="card__ph"><div class="card__img card__img--soon" aria-hidden="true"><span>Япония</span><small>Фото с&nbsp;разведки&nbsp;— скоро</small></div></div>
+        <div class="card__body">
+          <p class="badge badge--soft">Скоро анонс</p>
+          <h3 class="card__title">Япония</h3>
+          <p class="card__meta">Ноябрь 2027 · 10 дней<br><b>от&nbsp;189 000 ₽</b></p>
+          <ul class="facts">
+            <li><svg class="ico"><use href="#i-jump"/></svg>Прыжки с&nbsp;горных мостов</li>
+            <li><svg class="ico"><use href="#i-home"/></svg>Рёканы и&nbsp;горячие источники</li>
+            <li><svg class="ico"><use href="#i-plane"/></svg>Перелёт оплачивается отдельно</li>
+          </ul>
+          <p class="seats__label seats__label--wait">Уже в&nbsp;листе ожидания: 4 человека</p>
+          <a class="btn btn--line" href="#">Подробнее</a>
+        </div>
+      </li>
+    </ul>
+
+    <div class="wrap tours__foot">
+      <a class="btn btn--red tours__all" href="#">Всё расписание<span aria-hidden="true">→</span></a>
+    </div>
+  </section>
+
+  <!-- 4. RAPT в цифрах: экран залипает, при прокрутке по очереди показываются три цифры, у каждой своё фото.
+       Цифры пока условные — заменить на настоящие (data-to — до какого числа считать, data-suffix — знак после) -->
+  <section class="nums" id="numbers" aria-labelledby="nums-title">
+    <div class="nums__sticky">
+      <img class="nums__bg is-on" src="assets/img/group.jpg" alt="" loading="lazy">
+      <img class="nums__bg" src="assets/img/boat.jpg" alt="" loading="lazy">
+      <img class="nums__bg" src="assets/img/hammock.jpg" alt="" loading="lazy">
+      <div class="nums__in">
+        <h2 class="nums__title" id="nums-title">RAPT в&nbsp;цифрах</h2>
+        <ol class="nums__list">
+          <li class="is-on"><p class="nums__n"><span data-to="2000">2&nbsp;000</span>+</p><p class="nums__d">людей уже были с&nbsp;нами в&nbsp;путешествиях и&nbsp;на&nbsp;прыжках</p></li>
+          <li><p class="nums__n"><span data-to="19">19</span></p><p class="nums__d">лет организуем выезды&nbsp;— с&nbsp;2007 года</p></li>
+          <li><p class="nums__n"><span data-to="100">100</span>%</p><p class="nums__d">гарантия хорошего настроения</p></li>
+        </ol>
+        <div class="nums__bars" aria-hidden="true"><i class="is-on"></i><i></i><i></i></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 5. Почему мы -->
+  <section class="why" data-bg="ink" aria-labelledby="why-title">
+    <div class="wrap">
+      <div class="why__head">
+        <h2 class="h2 why__title" id="why-title">Нам доверяют <span class="mark">жизнь</span>. Мы&nbsp;относимся к&nbsp;этому серьёзно</h2>
+        <p class="why__lead">19 лет прыжков без&nbsp;компромиссов по&nbsp;безопасности. И&nbsp;столько&nbsp;же&nbsp;лет поездок, в&nbsp;которых хочется остаться подольше.</p>
+      </div>
+      <div class="mosaic">
+        <figure class="ph ph--big">
+          <img src="assets/img/team.jpg" alt="Команда и участники в касках на вершине скалы над морем" loading="lazy">
+          <span class="ph__pill"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3 5 6v5c0 4.4 3 8.3 7 10 4-1.7 7-5.6 7-10V6z"/><path d="m9 12 2 2 4-4"/></svg>Безопасность</span>
+          <figcaption><b>Одна команда с&nbsp;2007 года</b>Без&nbsp;текучки: прыжки проводят те же&nbsp;люди, что&nbsp;и&nbsp;19 лет назад. Мы&nbsp;знаем своё дело и&nbsp;отвечаем за&nbsp;него сами.</figcaption>
+        </figure>
+
+        <div class="tile tile--switch">
+          <div class="sw"><span>Всё включено</span><i class="sw__t" aria-hidden="true"></i></div>
+          <div><h3>Приключение без&nbsp;треша</h3><p>Лагерь, еда от&nbsp;шефа, баня, фото и&nbsp;видео. Быт берём на&nbsp;себя.</p></div>
+        </div>
+
+        <figure class="ph">
+          <img src="assets/img/climb.jpg" alt="Участница лезет по скале со страховкой" loading="lazy">
+          <span class="ph__pill"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3v6M12 9c-3 0-3 3 0 3s3 3 0 3-3 3 0 3v3"/></svg>Скалолазание</span>
+          <figcaption><b>Не&nbsp;только прыжки</b>Скалы, сапы, походы&nbsp;— каждый день разный.</figcaption>
+        </figure>
+
+        <a class="tile tile--crew" href="#crew">
+          <span class="faces" aria-hidden="true"><img src="assets/img/team/andrey.jpg" alt=""><img src="assets/img/team/anya.jpg" alt=""><img src="assets/img/team/anton.jpg" alt=""><img src="assets/img/team/yura.jpg" alt=""></span>
+          <div><h3>Знакомые лица</h3><p>Инструкторы и&nbsp;гиды&nbsp;— наша команда, а&nbsp;не&nbsp;случайные подрядчики.</p></div>
+          <span class="tile__go">Команда<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17 17 7M8 7h9v9"/></svg></span>
+        </a>
+
+        <figure class="ph ph--wide">
+          <img src="assets/img/hammock.jpg" alt="Участники отдыхают в гамаках в лагере" loading="lazy">
+          <span class="ph__pill"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 18h16M7 18a5 5 0 0 1 10 0M12 6V4M5.6 9.6 4.2 8.2M18.4 9.6l1.4-1.4"/></svg>Отдых</span>
+          <figcaption><b>Время на&nbsp;себя</b>Гамаки, закаты и&nbsp;разговоры у&nbsp;костра тоже в&nbsp;программе.</figcaption>
+        </figure>
+
+        <div class="tile tile--red tile--check">
+          <span class="check2" aria-hidden="true"><i></i><i></i></span>
+          <div><h3>Двойная проверка</h3><p>Перед каждым прыжком систему проверяют два инструктора. Все её&nbsp;элементы дублируются.</p></div>
+        </div>
+
+        <div class="tile tile--wide tile--mix">
+          <div><h3>Из&nbsp;чего состоит выезд</h3><p>Прыжок&nbsp;— яркий момент, но&nbsp;большую часть времени ты&nbsp;путешествуешь.</p></div>
+          <ul class="mix" aria-label="Примерный баланс выезда">
+            <li style="--v:9"><span>Природа и&nbsp;прогулки</span><i aria-hidden="true"></i></li>
+            <li style="--v:7"><span>Отдых и&nbsp;компания</span><i aria-hidden="true"></i></li>
+            <li style="--v:4"><span>Прыжки</span><i aria-hidden="true"></i></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 6. Как устроены прыжки: слева — неподвижный текст, справа при прокрутке «наезжают» друг на друга карточки
+       с номером, текстом и линейной иллюстрацией (рисуется, когда карточка появляется) -->
+  <section class="safety trip" aria-labelledby="trip-title">
+    <div class="wrap safety__in">
+      <div class="safety__lead">
+        <h2 class="h2" id="trip-title">Как&nbsp;устроен <span class="mark">выезд</span></h2>
+        <p>Организацию берём на&nbsp;себя целиком: дорогу, жильё, еду, программу и&nbsp;прыжки. Тебе остаётся собрать рюкзак.</p>
+        <p>Можно ехать одному: с&nbsp;группой познакомишься в&nbsp;чате ещё до&nbsp;выезда.</p>
+        <a class="btn btn--dark trip__btn" href="#tours">Смотреть туры</a>
+      </div>
+
+      <ol class="steps-stack">
+        <li class="sc" style="--n:0">
+          <p class="sc__n">01.</p>
+          <div class="sc__txt"><h3>Заявка и&nbsp;чат группы</h3><p>Оставляешь заявку, мы&nbsp;связываемся и&nbsp;подтверждаем даты. Дальше&nbsp;— чат группы, где&nbsp;заранее понятно, что&nbsp;взять с&nbsp;собой.</p></div>
+          <svg class="sc__art sc__ico" viewBox="0 0 256 256" aria-hidden="true"><path d="M227.79,186.39a76,76,0,0,0-61-110.07A76,76,0,1,0,28.21,138.39L20.5,164.6a12,12,0,0,0,14.9,14.9l26.21-7.71a75.93,75.93,0,0,0,27.6,7.9,76,76,0,0,0,105.18,40.1l26.21,7.71a12,12,0,0,0,14.9-14.9ZM60.9,163.66l-27.76,8.17a4,4,0,0,1-5-5l8.17-27.76a4.07,4.07,0,0,0-.31-3A68,68,0,1,1,63.92,164,4.06,4.06,0,0,0,60.9,163.66Zm165.92,55.16a4,4,0,0,1-4,1l-27.76-8.17a4.07,4.07,0,0,0-3,.31A68,68,0,0,1,98,180a76,76,0,0,0,71.5-95.28A68,68,0,0,1,220,184.08a4.07,4.07,0,0,0-.31,3l8.17,27.76A4,4,0,0,1,226.82,218.82Z"/></svg>
+        </li>
+        <li class="sc" style="--n:1">
+          <p class="sc__n">02.</p>
+          <div class="sc__txt"><h3>Дорога на&nbsp;нас</h3><p>Трансфер из&nbsp;Петербурга и&nbsp;обратно, заброска до&nbsp;места. Не&nbsp;нужно ничего искать и&nbsp;бронировать самому.</p></div>
+          <svg class="sc__art sc__ico" viewBox="0 0 256 256" aria-hidden="true"><path d="M251,109.4,205.47,56.3a12,12,0,0,0-9.21-4.3H32A12,12,0,0,0,20,64V176a12,12,0,0,0,12,12H52.29a28,28,0,0,0,55.42,0h56.58a28,28,0,0,0,55.42,0H240a12,12,0,0,0,12-12V112A4,4,0,0,0,251,109.4ZM199.36,61.47,239.3,108H172V60h24.26A4,4,0,0,1,199.36,61.47ZM100,108V60h64v48ZM32,60H92v48H28V64A4,4,0,0,1,32,60ZM80,204a20,20,0,1,1,20-20A20,20,0,0,1,80,204Zm112,0a20,20,0,1,1,20-20A20,20,0,0,1,192,204Zm48-24H219.71a28,28,0,0,0-55.42,0H107.71a28,28,0,0,0-55.42,0H32a4,4,0,0,1-4-4V116H244v60A4,4,0,0,1,240,180Z"/></svg>
+        </li>
+        <li class="sc" style="--n:2">
+          <p class="sc__n">03.</p>
+          <div class="sc__txt"><h3>Жильё и&nbsp;еда</h3><p>Где жить и&nbsp;чем кормить, продумываем заранее. На&nbsp;кэмпе&nbsp;— лагерь у&nbsp;воды и&nbsp;трёхразовое питание.</p></div>
+          <svg class="sc__art sc__ico" viewBox="0 0 256 256" aria-hidden="true"><path d="M219.81,225.21A4,4,0,0,1,216,228a3.92,3.92,0,0,1-1.21-.19L128,200.2,41.21,227.81A3.92,3.92,0,0,1,40,228a4,4,0,0,1-1.21-7.81l76-24.19-76-24.19a4,4,0,1,1,2.42-7.62L128,191.8l86.79-27.61a4,4,0,1,1,2.42,7.62l-76,24.19,76,24.19A4,4,0,0,1,219.81,225.21ZM72,108c0-19,9.38-38.85,27.12-57.27A152,152,0,0,1,125.9,28.59a4,4,0,0,1,4.2,0,152,152,0,0,1,26.78,22.14C174.62,69.15,184,89,184,108a56,56,0,0,1-54.56,56c-.48,0-1,0-1.44,0s-1,0-1.44,0A56,56,0,0,1,72,108Zm56,48a20,20,0,0,0,20-20c0-17.39-14.37-30.53-20-35-5.63,4.48-20,17.62-20,35A20,20,0,0,0,128,156ZM80,108a48,48,0,0,0,23.28,41.13A27.83,27.83,0,0,1,100,136c0-25.84,24.73-42.63,25.78-43.33a4,4,0,0,1,4.44,0c1.05.7,25.78,17.49,25.78,43.33a27.83,27.83,0,0,1-3.28,13.13A48,48,0,0,0,176,108c0-36.37-38.49-64.76-48-71.21C118.5,43.25,80,71.68,80,108Z"/></svg>
+        </li>
+        <li class="sc" style="--n:3">
+          <p class="sc__n">04.</p>
+          <div class="sc__txt"><h3>Программа на&nbsp;каждый день</h3><p>Прогулки, сапы, скалолазание, баня, закаты. Расписание есть, но&nbsp;без&nbsp;беготни: время на&nbsp;отдых остаётся.</p></div>
+          <svg class="sc__art sc__ico" viewBox="0 0 256 256" aria-hidden="true"><path d="M240,156H194.94A68,68,0,1,0,60,144a68.73,68.73,0,0,0,1.06,12H16a4,4,0,0,0,0,8H240a4,4,0,0,0,0-8ZM68,144a60,60,0,1,1,118.79,12H69.21A60.16,60.16,0,0,1,68,144Zm144,56a4,4,0,0,1-4,4H48a4,4,0,0,1,0-8H208A4,4,0,0,1,212,200ZM76.42,41.79a4,4,0,0,1,7.16-3.58l8,16a4,4,0,0,1-7.16,3.58Zm-56,52.42a4,4,0,0,1,5.37-1.79l16,8a4,4,0,0,1-3.58,7.16l-16-8A4,4,0,0,1,20.42,94.21Zm192,11.58a4,4,0,0,1,1.79-5.37l16-8a4,4,0,1,1,3.58,7.16l-16,8a4,4,0,0,1-5.37-1.79Zm-48-51.58,8-16a4,4,0,1,1,7.16,3.58l-8,16a4,4,0,0,1-7.16-3.58Z"/></svg>
+        </li>
+        <li class="sc" style="--n:4">
+          <p class="sc__n">05.</p>
+          <div class="sc__txt"><h3>Прыжки с&nbsp;командой</h3><p>Прыжки&nbsp;— яркая часть поездки, а&nbsp;не&nbsp;её&nbsp;смысл. Проводят инструкторы RAPT, как&nbsp;именно&nbsp;— рассказываем ниже.</p></div>
+          <svg class="sc__art sc__ico" viewBox="0 0 256 256" aria-hidden="true"><path d="M228,120a100,100,0,0,0-200,0,4,4,0,0,0,1.3,2.94,2.81,2.81,0,0,0,.3.26L124,194v26H112a4,4,0,0,0,0,8h32a4,4,0,0,0,0-8H132V194l94.4-70.8h0A4,4,0,0,0,228,120Zm-8.09-4H172C171,67.38,152.13,40.86,140,28.79A92.14,92.14,0,0,1,219.91,116ZM128,28.89A76.67,76.67,0,0,1,145,47.64c8.36,12.69,18.27,34.71,19,68.36H92.05c.73-33.65,10.64-55.67,19-68.36A76.47,76.47,0,0,1,128,28.89ZM161.2,124,128,183.76,94.8,124Zm-75.55,0,29.74,53.54L44,124Zm84.7,0H212l-71.39,53.54ZM116,28.79C103.87,40.86,85,67.38,84,116H36.09A92.14,92.14,0,0,1,116,28.79Z"/></svg>
+        </li>
+        <li class="sc" style="--n:5">
+          <p class="sc__n">06.</p>
+          <div class="sc__txt"><h3>Фото и&nbsp;видео</h3><p>С&nbsp;группой едут фотографы. Тебе не&nbsp;нужно отвлекаться на&nbsp;телефон&nbsp;— кадры пришлём после.</p></div>
+          <svg class="sc__art sc__ico" viewBox="0 0 256 256" aria-hidden="true"><path d="M198.71,57.29A100,100,0,1,0,57.29,198.71,100,100,0,1,0,198.71,57.29Zm10.37,114.27-61-11.14L210.4,87a92.26,92.26,0,0,1-1.32,84.52ZM95.87,122.13,117,97.24l32.14,5.86,11,30.77L139,158.76l-32.14-5.86ZM206.24,79.58l-40.13,47.25L133.75,36.2a92.09,92.09,0,0,1,72.49,43.38ZM63,63a91.31,91.31,0,0,1,62.26-26.88L146,94.41,51.32,77.11A92.94,92.94,0,0,1,63,63Zm-16,21.49,61,11.14L45.6,169a92.26,92.26,0,0,1,1.32-84.52Zm2.84,92,40.13-47.25,32.36,90.63a92.09,92.09,0,0,1-72.49-43.38Zm143.29,16.63a91.31,91.31,0,0,1-62.26,26.88L110,161.59l94.72,17.3A92.94,92.94,0,0,1,193.05,193.05Z"/></svg>
+        </li>
+      </ol>
+    </div>
+  </section>
+
+  <!-- Коротко о прыжках: безопасность в шести пунктах + противопоказания -->
+  <section class="jumps" aria-labelledby="jumps-title">
+    <div class="wrap jumps__in">
+      <div class="jumps__lead">
+        <p class="jumps__kicker">Про&nbsp;прыжки</p>
+        <h2 class="h2" id="jumps-title">Безопасно, даже если прыгаешь впервые</h2>
+        <p>Роупджампинг&nbsp;— потенциально опасная активность. Поэтому мы&nbsp;делаем его настолько безопасным, насколько это&nbsp;возможно, и&nbsp;не&nbsp;экономим на&nbsp;снаряжении. Перед прыжком инструктор всё объяснит, наденет и&nbsp;проверит.</p>
+        <details class="contra">
+          <summary>Кому нельзя прыгать</summary>
+          <ul>
+            <li>Травмы и&nbsp;операции на&nbsp;позвоночнике, грыжи межпозвоночных дисков, сколиоз 3 степени</li>
+            <li>Пороки сердца, кардиостимулятор, нарушения ритма, гипертония 2–3 стадии, сердечная недостаточность</li>
+            <li>Бронхиальная астма</li>
+            <li>Первые 1,5–2 месяца после операции</li>
+            <li>Сильная миопия, лазерная коррекция зрения</li>
+            <li>Повышенное внутричерепное давление, эпилепсия</li>
+            <li>Тиреотоксикоз, беременность</li>
+            <li>Психиатрические заболевания в&nbsp;стадии обострения, сильные нервные расстройства</li>
+            <li>Опущение почек 2–3 степени</li>
+          </ul>
+          <p class="contra__src">Список составила врач Наталья Терских. Если сомневаешься&nbsp;— напиши нам до&nbsp;записи.</p>
+        </details>
+      </div>
+      <div class="jb">
+        <figure class="jb__ph">
+          <img src="assets/img/karelia-jump-v.jpg" alt="Прыжок с верёвкой со скалы над озером" loading="lazy">
+          <span class="ph__pill jb__pill"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3v18M8 7l4-4 4 4M8 17l4 4 4-4"/></svg>35 м над&nbsp;Ладогой</span>
+          <figcaption class="jb__order">
+            <p class="jb__order-t">Кто прыгает первым</p>
+            <ol>
+              <li><b>1</b>Груз</li>
+              <li><b>2</b>Команда</li>
+              <li><b>3</b>Ты</li>
+            </ol>
+            <p class="jb__order-s">Новую систему сначала проверяем тестовым грузом, потом прыгают инструкторы</p>
+          </figcaption>
+        </figure>
+
+        <div class="jb__t jb__t--dark">
+          <span class="jb__faces" aria-hidden="true"><img src="assets/img/team/andrey.jpg" alt=""><img src="assets/img/team/anton.jpg" alt=""><i></i></span>
+          <div><b class="jb__n">2 инструктора</b><p>проверяют систему перед каждым прыжком: сначала один, потом второй</p></div>
+        </div>
+
+        <div class="jb__t jb__t--red">
+          <span class="jb__dup" aria-hidden="true"><i></i><i></i></span>
+          <div><b class="jb__n">Всё ×2</b><p>все элементы системы дублируются: подведёт одно&nbsp;— держит второе</p></div>
+        </div>
+
+        <div class="jb__t">
+          <svg class="jb__wave" viewBox="0 0 200 40" preserveAspectRatio="none" aria-hidden="true"><path d="M0 20 C 25 2, 25 38, 50 20 S 75 2, 100 20 S 125 38, 150 20 S 175 2, 200 20"/></svg>
+          <div><b class="jb__n">Мягкий рывок</b><p>динамические верёвки растягиваются и&nbsp;гасят удар в&nbsp;конце</p></div>
+        </div>
+
+        <div class="jb__t">
+          <svg class="jb__seal" viewBox="0 0 256 256" aria-hidden="true"><path d="M223,105.58c-4-4.2-8.2-8.54-10-12.8-1.65-4-1.73-9.53-1.82-15.41-.14-9-.29-19.19-6.83-25.74s-16.74-6.69-25.74-6.83c-5.88-.09-11.43-.17-15.41-1.82-4.26-1.76-8.6-5.93-12.8-9.95-6.68-6.41-13.59-13-22.42-13s-15.74,6.62-22.42,13c-4.2,4-8.54,8.2-12.8,10-4,1.65-9.53,1.73-15.41,1.82-9,.14-19.19.29-25.74,6.83S44.94,68.37,44.8,77.37c-.09,5.88-.17,11.43-1.82,15.41-1.76,4.26-5.93,8.6-9.95,12.8-6.41,6.68-13,13.59-13,22.42s6.62,15.74,13,22.42c4,4.2,8.2,8.54,10,12.8,1.65,4,1.73,9.53,1.82,15.41.14,9,.29,19.19,6.83,25.74s16.74,6.69,25.74,6.83c5.88.09,11.43.17,15.41,1.82,4.26,1.76,8.6,5.93,12.8,9.95,6.68,6.41,13.59,13,22.42,13s15.74-6.62,22.42-13c4.2-4,8.54-8.2,12.8-10,4-1.65,9.53-1.73,15.41-1.82,9-.14,19.19-.29,25.74-6.83s6.69-16.74,6.83-25.74c.09-5.88.17-11.43,1.82-15.41,1.76-4.26,5.93-8.6,9.95-12.8,6.41-6.68,13-13.59,13-22.42S229.38,112.26,223,105.58Zm-5.78,39.3c-4.54,4.73-9.24,9.63-11.57,15.28-2.23,5.39-2.33,12-2.43,18.35-.12,8.2-.24,16-4.49,20.2s-12,4.37-20.2,4.49c-6.37.1-13,.2-18.35,2.43-5.65,2.33-10.55,7-15.28,11.57C139.09,222.75,133.62,228,128,228s-11.09-5.25-16.88-10.8c-4.73-4.54-9.63-9.24-15.28-11.57-5.39-2.23-12-2.33-18.35-2.43-8.2-.12-15.95-.24-20.2-4.49s-4.37-12-4.49-20.2c-.1-6.37-.2-13-2.43-18.35-2.33-5.65-7-10.55-11.57-15.28C33.25,139.09,28,133.62,28,128s5.25-11.09,10.8-16.88c4.54-4.73,9.24-9.63,11.57-15.28,2.23-5.39,2.33-12,2.43-18.35.12-8.2.24-15.95,4.49-20.2s12-4.37,20.2-4.49c6.37-.1,13-.2,18.35-2.43,5.65-2.33,10.55-7,15.28-11.57C116.91,33.25,122.38,28,128,28s11.09,5.25,16.88,10.8c4.73,4.54,9.63,9.24,15.28,11.57,5.39,2.23,12,2.33,18.35,2.43,8.2.12,16,.24,20.2,4.49s4.37,12,4.49,20.2c.1,6.37.2,13,2.43,18.35,2.33,5.65,7,10.55,11.57,15.28,5.55,5.79,10.8,11.26,10.8,16.88S222.75,139.09,217.2,144.88Zm-46.37-43.71a4,4,0,0,1,0,5.66l-56,56a4,4,0,0,1-5.66,0l-24-24a4,4,0,0,1,5.66-5.66L112,154.34l53.17-53.17A4,4,0,0,1,170.83,101.17Z"/></svg>
+          <div><b class="jb__n">UIAA</b><p>только сертифицированное снаряжение, осматриваем после каждого дня</p></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 6. Отзывы -->
+  <section class="reviews" aria-labelledby="reviews-title">
+    <div class="wrap reviews__in">
+      <div class="reviews__lead">
+        <h2 class="h2" id="reviews-title">Что&nbsp;говорят <span class="mark">участники</span></h2>
+        <p>Отзывы с&nbsp;прошлых выездов&nbsp;— без&nbsp;правок, как&nbsp;нам их&nbsp;написали.</p>
+        <div class="reviews__nav">
+          <button class="arrow arrow--light" type="button" data-deck="prev" aria-label="Предыдущий отзыв">←</button>
+          <p class="reviews__count" aria-live="polite"><b>01</b> / 04</p>
+          <button class="arrow arrow--light" type="button" data-deck="next" aria-label="Следующий отзыв">→</button>
+        </div>
+      </div>
+      <ul class="deck">
+          <li class="dcard">
+            <span class="dcard__q" aria-hidden="true">“</span>
+            <blockquote>«Это&nbsp;были райские дни, без&nbsp;преуменьшения, концентрированный кайф! Вы продумали все мелочи, все детали. Лучший отдых в&nbsp;моей жизни, спасибо»</blockquote>
+            <div class="dcard__who"><span class="dcard__ava" aria-hidden="true">В</span><p>Виолетта, Санкт-Петербург<span>Карелия, июль и&nbsp;август 2024</span></p></div>
+          </li>
+          <li class="dcard dcard--photo">
+            <img src="assets/img/group.jpg" alt="Участники выезда вместе на скалах" loading="lazy">
+            <span class="ph__pill">Наша группа на&nbsp;скалах</span>
+          </li>
+          <li class="dcard dcard--red">
+            <span class="dcard__q" aria-hidden="true">“</span>
+            <blockquote>«Организация на&nbsp;высоте, эмоции через край, очень атмосферно и&nbsp;душевно! Это&nbsp;не&nbsp;просто команда&nbsp;— это&nbsp;одна большая семья, где каждый делает свою работу на&nbsp;высоком уровне»</blockquote>
+            <div class="dcard__who"><span class="dcard__ava" aria-hidden="true">АН</span><p>Анна Николаева, Санкт-Петербург<span>Роуп-фестиваль в&nbsp;Карелии, июнь 2021</span></p></div>
+          </li>
+          <li class="dcard dcard--light">
+            <span class="dcard__q" aria-hidden="true">“</span>
+            <blockquote>«Спасибо команде. Честно, не&nbsp;ожидала, что&nbsp;будет настолько круто. Вы продумали все мелочи, все детали. Вы обустроили для&nbsp;нас небольшой интересный мир, где в&nbsp;каждом уголке находишь что-нибудь новое»</blockquote>
+            <div class="dcard__who"><span class="dcard__ava" aria-hidden="true">В</span><p>Виолетта, Санкт-Петербург<span>Карелия, 2024</span></p></div>
+          </li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- 7. Сертификаты: тёмная скруглённая карточка, справа 3D-билет (наклоняется за курсором), внизу бегущая лента с горящим предложением -->
+  <section class="gift" id="certificates" data-bg="red" aria-labelledby="cert-title">
+    <div class="gift__card">
+      <div class="gift__in">
+        <div class="gift__text">
+          <h2 class="gift__title" id="cert-title">Подари не&nbsp;вещь, а&nbsp;<span class="mark">прыжок</span></h2>
+          <p class="gift__lead">Сертификат RAPT&nbsp;— это&nbsp;билет в&nbsp;приключение: прыжок со&nbsp;скалы, кэмп на&nbsp;Ладоге или&nbsp;целый тур. Человек сам выберет даты.</p>
+          <div class="gift__row">
+            <a class="btn btn--red btn--lg" href="#form">Заказать сертификат</a>
+          </div>
+          <ul class="gift__opts">
+            <li><i class="gift__oi" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 3v12m0 0-5-5m5 5 5-5M5 21h14"/></svg></i><b>На&nbsp;прыжок</b><span>с&nbsp;той высоты, о&nbsp;которой мечтает</span></li>
+            <li><i class="gift__oi" aria-hidden="true"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M10 17V7h3.5a3 3 0 0 1 0 6H8.5M8.5 15.5H14"/></svg></i><b>На&nbsp;сумму</b><span>её&nbsp;можно потратить на&nbsp;любой тур</span></li>
+          </ul>
+        </div>
+
+        <!-- 3D-билет: две карточки стопкой, верхняя наклоняется вслед за мышью -->
+        <div class="ticket-stage" id="ticket" aria-hidden="true">
+          <div class="ticket ticket--back"></div>
+          <div class="ticket">
+            <div class="ticket__photo"><img src="assets/img/karelia-jump-v.jpg" alt="" loading="lazy"></div>
+            <div class="ticket__body">
+              <img class="ticket__logo" src="assets/logo/rapt-logo-dark.svg" alt="" width="120" height="21">
+              <p class="ticket__kind">Подарочный сертификат</p>
+              <p class="ticket__big">35<small>м</small></p>
+              <p class="ticket__what">прыжок над&nbsp;Ладогой</p>
+              <div class="ticket__rows">
+                <p><span>Кому</span>Тому, кто давно мечтал</p>
+                <p><span>Дата</span>Открытая</p>
+              </div>
+              <div class="ticket__code"></div>
+            </div>
+            <i class="ticket__shine"></i>
+          </div>
+        </div>
+      </div>
+
+      <!-- Горящее предложение в бегущей строке — пример, текст акции заменить на настоящий -->
+      <div class="marquee marquee--hot">
+        <div class="marquee__row"><div class="marquee__track" aria-hidden="true"><span>Новогодняя акция: сертификат на&nbsp;любой тур −10% до&nbsp;31 декабря</span><b></b><span>Новогодняя акция: сертификат на&nbsp;любой тур −10% до&nbsp;31 декабря</span><b></b><span>Новогодняя акция: сертификат на&nbsp;любой тур −10% до&nbsp;31 декабря</span><b></b><span>Новогодняя акция: сертификат на&nbsp;любой тур −10% до&nbsp;31 декабря</span><b></b><span>Новогодняя акция: сертификат на&nbsp;любой тур −10% до&nbsp;31 декабря</span><b></b><span>Новогодняя акция: сертификат на&nbsp;любой тур −10% до&nbsp;31 декабря</span><b></b></div></div>
+        <p class="sr">Новогодняя акция: сертификат на&nbsp;любой тур со&nbsp;скидкой 10% до&nbsp;31 декабря</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- 8. Инструкторы. Состав и тексты — со старой страницы «Команда»; актуальный состав уточнить у заказчика -->
+  <section class="crew" id="crew" aria-labelledby="crew-title">
+    <div class="wrap">
+      <div class="crew__head">
+        <h2 class="crew__title" id="crew-title">Кто поедет с&nbsp;тобой</h2>
+        <p class="crew__lead">Инструкторы&nbsp;— та же&nbsp;команда, что&nbsp;проводит прыжки с&nbsp;2007 года. Без&nbsp;текучки и&nbsp;случайных людей.</p>
+      </div>
+      <ul class="crew__grid">
+        <li class="mate mate--big">
+          <img src="assets/img/team/andrey.jpg" alt="Андрей Нефёдов" loading="lazy">
+          <div class="mate__info">
+            <p class="mate__since">В&nbsp;команде с&nbsp;2007</p>
+            <h3 class="mate__name">Андрей Нефёдов</h3>
+            <p class="mate__role">Капитан и&nbsp;основатель RAPT</p>
+            <p class="mate__more">Мастер спорта и&nbsp;двукратный чемпион России по&nbsp;альпинизму. Скалолаз, бейсджампер, путешественник и&nbsp;фотограф.</p>
+          </div>
+        </li>
+        <li class="mate">
+          <img src="assets/img/team/anton.jpg" alt="Антон Червяков" loading="lazy">
+          <div class="mate__info">
+            <p class="mate__since">С&nbsp;2007</p>
+            <h3 class="mate__name">Антон Червяков</h3>
+            <p class="mate__role">Мастер ассистов</p>
+            <p class="mate__more">Не&nbsp;даст запутаться в&nbsp;верёвке на&nbsp;высокой скале. Бейсджампер и&nbsp;вингсьют-пилот.</p>
+          </div>
+        </li>
+        <li class="mate">
+          <img src="assets/img/team/anya.jpg" alt="Анна Сновалёва" loading="lazy">
+          <div class="mate__info">
+            <p class="mate__since">С&nbsp;2012</p>
+            <h3 class="mate__name">Анна Сновалёва</h3>
+            <p class="mate__role">Тревел-гид</p>
+            <p class="mate__more">Встретит, запишет на&nbsp;прыжок и&nbsp;наденет снаряжение. Любит людей, петь и&nbsp;летать на&nbsp;параплане.</p>
+          </div>
+        </li>
+        <li class="mate">
+          <img src="assets/img/team/yura.jpg" alt="Юрий Люблин" loading="lazy">
+          <div class="mate__info">
+            <p class="mate__since">С&nbsp;2016</p>
+            <h3 class="mate__name">Юрий Люблин</h3>
+            <p class="mate__role">Отвечает за&nbsp;снаряжение</p>
+            <p class="mate__more">Настоящий технарь и&nbsp;промышленный альпинист. Любит снаряжение и&nbsp;всё, что&nbsp;с&nbsp;ним связано.</p>
+          </div>
+        </li>
+        <li class="mate">
+          <img src="assets/img/team/igor.jpg" alt="Игорь Дикушин" loading="lazy">
+          <div class="mate__info">
+            <p class="mate__since">С&nbsp;2010</p>
+            <h3 class="mate__name">Игорь Дикушин</h3>
+            <p class="mate__role">Инструктор прыжков</p>
+            <p class="mate__more">Роупджампер, скайдайвер, любитель сноуборда и&nbsp;фанат мотоциклов.</p>
+          </div>
+        </li>
+        <li class="mate">
+          <img src="assets/img/team/slava.jpg" alt="Вячеслав Мальцев" loading="lazy">
+          <div class="mate__info">
+            <p class="mate__since">С&nbsp;2012</p>
+            <h3 class="mate__name">Вячеслав Мальцев</h3>
+            <p class="mate__role">Инструктор и&nbsp;главный водитель</p>
+            <p class="mate__more">Скалолаз и&nbsp;бейсджампер. Садишься в&nbsp;машину, засыпаешь&nbsp;— и&nbsp;просыпаешься уже на&nbsp;месте.</p>
+          </div>
+        </li>
+        <li class="mate mate--tile">
+          <svg class="mate__rope" viewBox="0 0 300 300" preserveAspectRatio="none" aria-hidden="true"><path pathLength="1" d="M-10 70 C 60 20, 110 120, 170 70 S 280 30, 320 90"/><path pathLength="1" d="M-10 150 C 50 110, 120 200, 180 150 S 270 110, 320 170"/></svg>
+          <p class="mate__big"><span class="mate__count" data-to="100">100</span>+</p>
+          <p class="mate__tile-t">проведённых выездов за&nbsp;плечами каждого</p>
+          <a class="mate__cta" href="#form"><span>Поехать с&nbsp;нами</span><i><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17 17 7M8 7h9v9"/></svg></i></a>
+        </li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- 8. Кто мы: фраза + «облако» круглых фото. Стоит перед заявкой как последний толчок.
+       Положение каждого круга задаётся в style: --l, --t, --s (компьютер, в % ширины блока), --ml, --mt, --ms (телефон).
+       Круги без --ml на телефоне скрыты -->
+  <section class="about" id="about" aria-labelledby="about-title">
+    <div class="about__in">
+      <!-- Бумажный самолётик: след с петлёй рисуется линией, самолётик покачивается, гаснет и повторяется -->
+      <svg class="plane" viewBox="0 0 300 260" aria-hidden="true">
+        <path class="plane__trail" pathLength="1" d="M8 252 C 58 246, 96 214, 80 186 C 66 162, 30 176, 44 200 C 62 230, 126 214, 160 160 C 184 122, 204 92, 226 70"/>
+        <g class="plane__body">
+          <path pathLength="1" d="M206 66 292 10 250 106 238 76Z"/>
+          <path pathLength="1" d="M238 76 292 10M238 76l-8 22 20 8"/>
+        </g>
+      </svg>
+      <p class="about__over">Команда RAPT</p>
+      <h2 class="about__title" id="about-title">Тебе остаётся приехать <span class="about__nl">и&nbsp;<img class="about__mark" src="assets/logo/rapt-mark.svg" alt="" width="88" height="52">&nbsp;прыгнуть</span></h2>
+      <p class="about__text">Обычно одни проводят прыжки, другие возят в&nbsp;туры. Мы&nbsp;соединили это. Едем туда, где есть красивые скалы и&nbsp;дамбы, прыгаем, а&nbsp;в&nbsp;остальное время&nbsp;— горы, море, закаты и&nbsp;хорошая компания. Организацию берём на&nbsp;себя целиком.</p>
+      <div class="about__actions">
+        <a class="btn btn--red btn--lg" href="#form">Оставить заявку</a>
+        <div class="seal" role="img" aria-label="Прыгаем с 2007 года">
+          <svg class="seal__ring" viewBox="0 0 120 120" aria-hidden="true"><defs><path id="seal-circle" d="M60 60m-45 0a45 45 0 1 1 90 0a45 45 0 1 1-90 0"/></defs><text textLength="276" lengthAdjust="spacing"><textPath href="#seal-circle" textLength="276" lengthAdjust="spacing">ПРЫГАЕМ С 2007 · 19 ЛЕТ В ВОЗДУХЕ · </textPath></text></svg>
+          <img class="seal__mark" src="assets/logo/rapt-mark.svg" alt="" width="44" height="26">
+        </div>
+      </div>
+    </div>
+    <ul class="bubbles" aria-hidden="true">
+        <li class="bubble" style="--l:1;--t:4;--s:16;--ml:0;--mt:2;--ms:40"><img src="assets/img/karelia-jump-v.jpg" alt="" loading="lazy"></li>
+        <li class="bubble bubble--desk" style="--l:16.5;--t:10;--s:11"><img src="assets/img/hero.jpg" alt="" loading="lazy"></li>
+        <li class="bubble" style="--l:27;--t:12;--s:20;--ml:39;--mt:9;--ms:42"><img src="assets/img/group.jpg" alt="" loading="lazy"></li>
+        <li class="bubble" style="--l:44;--t:1;--s:18;--ml:80;--mt:0;--ms:20"><img src="assets/img/fall.jpg" alt="" loading="lazy"></li>
+        <li class="bubble bubble--desk" style="--l:46.5;--t:24.5;--s:7"><img src="assets/img/karelia-food.jpg" alt="" loading="lazy"></li>
+        <li class="bubble" style="--l:57;--t:15;--s:14;--ml:0;--mt:43;--ms:24"><img src="assets/img/climb.jpg" alt="" loading="lazy"></li>
+        <li class="bubble" style="--l:71;--t:9;--s:22;--ml:28;--mt:48;--ms:28"><img src="assets/img/team.jpg" alt="" loading="lazy"></li>
+        <li class="bubble" style="--l:91;--t:5;--s:10;--ml:91;--mt:31;--ms:10"><img src="assets/img/caucasus.jpg" alt="" loading="lazy"></li>
+        <li class="bubble bubble--desk" style="--l:9.5;--t:24.5;--s:9"><img src="assets/img/hammock.jpg" alt="" loading="lazy"></li>
+        <li class="bubble bubble--desk" style="--l:0;--t:26;--s:8"><img src="assets/img/karelia-sup.jpg" alt="" loading="lazy"></li>
+        <li class="bubble bubble--desk" style="--l:54;--t:29;--s:8"><img src="assets/img/chair.jpg" alt="" loading="lazy"></li>
+        <li class="bubble" style="--l:90;--t:24;--s:12;--ml:67;--mt:47;--ms:26"><img src="assets/img/karelia-camp.jpg" alt="" loading="lazy"></li>
+    </ul>
+  </section>
+
+  <!-- 9. Вопросы. Ответы — черновик: условия возврата, страховки и ограничения по весу уточнить у заказчика -->
+  <section class="faq-sec" id="faq" aria-labelledby="faq-title">
+    <div class="wrap">
+      <h2 class="faq-sec__title" id="faq-title">Знаем, что&nbsp;тебя <span class="mark">волнует</span></h2>
+      <div class="qa">
+        <details class="qa__item"><summary>Подойдёт ли&nbsp;это&nbsp;новичку?</summary><div class="qa__a"><p>Да. Опыт не&nbsp;нужен: инструктор всё объяснит, наденет и&nbsp;проверит снаряжение.</p></div></details>
+        <details class="qa__item"><summary>Я&nbsp;переживаю, что&nbsp;мне не&nbsp;с&nbsp;кем поехать</summary><div class="qa__a"><p>Многие едут одни&nbsp;— и&nbsp;это&nbsp;нормально. До&nbsp;старта добавим тебя в&nbsp;общий чат группы, чтобы познакомиться заранее. На&nbsp;месте компания складывается в&nbsp;первый же&nbsp;вечер.</p></div></details>
+        <details class="qa__item"><summary>Какой возраст у&nbsp;участников?</summary><div class="qa__a"><p>Чаще всего 20–40 лет, но&nbsp;возраст не&nbsp;главное. Главное&nbsp;— желание приключений.</p></div></details>
+        <details class="qa__item"><summary>Есть ли&nbsp;ограничения по&nbsp;здоровью?</summary><div class="qa__a"><p>Для&nbsp;прыжков есть противопоказания: проблемы со&nbsp;спиной и&nbsp;сердцем, недавние операции, беременность и&nbsp;другие. Полный список&nbsp;— в&nbsp;блоке «Как&nbsp;устроены прыжки». Ограничение по&nbsp;весу: [уточнить].</p></div></details>
+        <details class="qa__item"><summary>Если я&nbsp;заболею и&nbsp;не&nbsp;смогу поехать, мне вернут деньги?</summary><div class="qa__a"><p>[Условия возврата&nbsp;— уточнить.] Если не&nbsp;получается поехать, напиши нам как&nbsp;можно раньше: поможем перенести участие на&nbsp;другие даты или&nbsp;передать место другу.</p></div></details>
+        <details class="qa__item"><summary>Какие будут дополнительные расходы?</summary><div class="qa__a"><p>Всё, что&nbsp;входит и&nbsp;не&nbsp;входит в&nbsp;стоимость, расписано на&nbsp;странице каждого тура. Обычно сверху&nbsp;— дорога до&nbsp;точки старта и&nbsp;личные траты.</p></div></details>
+        <details class="qa__item"><summary>Что&nbsp;если будет плохая погода?</summary><div class="qa__a"><p>Безопасность важнее расписания: в&nbsp;непогоду прыжки переносим на&nbsp;другой день. Программу планируем с&nbsp;запасом, чтобы успеть всё.</p></div></details>
+        <details class="qa__item"><summary>Нужна ли&nbsp;страховка?</summary><div class="qa__a"><p>[Уточнить.] Для&nbsp;зарубежных туров страховка обязательна&nbsp;— подскажем, какую выбрать.</p></div></details>
+      </div>
+    </div>
+  </section>
+
+  <!-- 10. Заявка: тёмный блок на фото, слева — как всё устроено и «горящее» место, справа — форма -->
+  <section class="apply apply--sell" id="form" aria-labelledby="apply-title">
+    <img class="apply__bg" src="assets/img/karelia-camp.jpg" alt="" loading="lazy">
+    <div class="wrap apply__in">
+
+      <div class="apply__lead">
+        <p class="pill pill--light">Бронь на&nbsp;2027</p>
+        <h2 class="apply__title" id="apply-title">Забронируй место, пока группа не&nbsp;собралась</h2>
+        <p class="apply__sub">Едем небольшими группами, поэтому места на&nbsp;популярные даты заканчиваются быстро. Заявка ни&nbsp;к&nbsp;чему не&nbsp;обязывает.</p>
+        <ol class="steps">
+          <li><b>Оставляешь заявку</b><span>Займёт минуту</span></li>
+          <li><b>Связываемся с&nbsp;тобой</b><span>Отвечаем на&nbsp;вопросы и&nbsp;подбираем даты</span></li>
+          <li><b>Бронируешь место</b><span>И&nbsp;попадаешь в&nbsp;чат своей группы</span></li>
+        </ol>
+        <p class="hot"><i aria-hidden="true"></i>Карелия, 12–14 июня: осталось 3 места</p>
+      </div>
+      <form class="form" id="apply" novalidate>
+        <fieldset class="field">
+          <legend>Куда хочешь поехать</legend>
+          <div class="chips">
+            <label class="chip"><input type="radio" name="tour" value="Карелия: экстрим-кэмп" checked><span>Карелия: кэмп</span></label>
+            <label class="chip"><input type="radio" name="tour" value="Карелия: второй формат"><span>Карелия: 5 дней</span></label>
+            <label class="chip"><input type="radio" name="tour" value="Кавказ"><span>Кавказ</span></label>
+            <label class="chip"><input type="radio" name="tour" value="Марокко"><span>Марокко</span></label>
+            <label class="chip"><input type="radio" name="tour" value="Япония"><span>Япония</span></label>
+            <label class="chip"><input type="radio" name="tour" value="Сертификат"><span>Сертификат</span></label>
+            <label class="chip"><input type="radio" name="tour" value="Пока не знаю"><span>Пока не&nbsp;знаю</span></label>
+          </div>
+        </fieldset>
+        <div class="form__row">
+          <label class="field">
+            <span>Имя</span>
+            <input type="text" name="name" autocomplete="given-name" required>
+          </label>
+          <label class="field">
+            <span>Телефон или&nbsp;ник в&nbsp;Telegram</span>
+            <input type="text" name="contact" autocomplete="tel" required>
+          </label>
+        </div>
+        <fieldset class="field">
+          <legend>Как&nbsp;удобнее связаться</legend>
+          <div class="chips">
+            <label class="chip"><input type="radio" name="via" value="telegram" checked><span>Telegram</span></label>
+            <label class="chip"><input type="radio" name="via" value="email"><span>Почта</span></label>
+            <label class="chip"><input type="radio" name="via" value="call"><span>Позвонить</span></label>
+          </div>
+        </fieldset>
+        <label class="check">
+          <input type="checkbox" name="agree" required>
+          <span>Даю согласие на&nbsp;обработку персональных данных по <a href="#">политике конфиденциальности</a></span>
+        </label>
+        <p class="form__error" id="form-error" role="alert" hidden></p>
+        <button class="btn btn--red form__btn" type="submit">Отправить заявку</button>
+        <p class="form__note">Ни&nbsp;к&nbsp;чему не&nbsp;обязывает. Ответим удобным тебе способом</p>
+        <div class="form__done" id="form-done" hidden tabindex="-1">
+          <svg class="form__ok" viewBox="0 0 52 52" aria-hidden="true"><circle cx="26" cy="26" r="24" pathLength="1"/><path d="M15 27l7 7 15-16" pathLength="1"/></svg>
+          <h3>Заявка отправлена</h3>
+          <p>Скоро свяжемся с&nbsp;тобой. А&nbsp;пока можно написать нам в <a href="https://t.me/" data-goal="contact_click">Telegram</a>.</p>
+        </div>
+      </form>
+    </div>
+  </section>
+
+</main>
+
+<footer class="footer">
+  <div class="wrap footer__in">
+    <img src="assets/logo/rapt-logo-light.svg" alt="RAPT" width="171" height="30">
+    <nav class="footer__nav" aria-label="Разделы">
+      <a href="#tours">Туры</a>
+      <a href="#tours">Расписание</a>
+      <a href="#certificates">Сертификаты</a>
+      <a href="#about">О&nbsp;проекте</a>
+    </nav>
+    <div class="footer__contacts">
+      <a href="https://t.me/" data-goal="contact_click">Telegram</a>
+      <a href="https://vk.com/" data-goal="contact_click">ВКонтакте</a>
+      <a href="https://instagram.com/" data-goal="contact_click">Instagram</a>
+      <a href="tel:+7" data-goal="contact_click">[телефон]</a>
+      <a href="mailto:" data-goal="contact_click">[почта]</a>
+    </div>
+    <div class="footer__legal">
+      <p>© RAPT, 2007–2026</p>
+      <a href="#">Политика конфиденциальности</a>
+      <p>[ИП / ООО, ИНН]</p>
+    </div>
+  </div>
+</footer>
+
+<script src="js/main.js?v=20261120n" defer></script>
+</body>
+</html>
