@@ -8,11 +8,50 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Onest:wght@400;500;600;700&display=swap">
-<link rel="stylesheet" href="css/style.css?v=20261120n">
+<link rel="stylesheet" href="css/style.css?v=20261122a">
 <link rel="icon" href="assets/logo/rapt-logo-dark.svg">
 <!-- Яндекс Метрика: вставить счётчик сюда. Цели: отправка формы (form_sent), клики по Telegram / телефону / почте (contact_click) -->
 </head>
 <body>
+<!-- Заставка при первом входе: верёвка с логотипом «прыгает» вниз, счётчик высоты 0 → 35 м, потом экран уезжает вверх.
+     Показывается один раз за визит (sessionStorage), не показывается при переходе между страницами и при «меньше движения» -->
+<script>
+(function () {
+  var d = document, h = d.documentElement;
+  try {
+    if (sessionStorage.getItem('rapt-intro') || sessionStorage.getItem('rapt-nav') === '1' || matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+    sessionStorage.setItem('rapt-intro', '1');
+  } catch (e) { return; }
+  h.classList.add('intro-on');
+  d.body.insertAdjacentHTML('afterbegin',
+    '<div class="intro" aria-hidden="true">' +
+      '<img class="intro__logo" src="assets/logo/rapt-logo-light.svg" alt="">' +
+      '<div class="intro__rope"><i class="intro__line"></i><img class="intro__mark" src="assets/logo/rapt-mark.svg" alt=""></div>' +
+      '<p class="intro__msg"><span>Готовим снаряжение</span><span>Проверяем дважды</span><span>Прыгаем!</span></p>' +
+      '<p class="intro__alt"><b>0</b><small>м</small></p>' +
+      '<i class="intro__bar"></i>' +
+    '</div><div class="intro-red" aria-hidden="true"></div>');
+  var el = d.querySelector('.intro'), num = el.querySelector('.intro__alt b'), t0 = performance.now(), done = false, loaded = false;
+  // высота: свободное падение 0.35–1.35 с, потом чуть «отыгрывает» верёвка
+  (function tick(t) {
+    var k = Math.min(1, Math.max(0, (t - t0 - 350) / 1000));
+    num.textContent = Math.round(35 * k * k);
+    if (k < 1 && !done) requestAnimationFrame(tick);
+  })(t0);
+  setTimeout(function () { num.textContent = '35'; }, 1500);
+  var finish = function () {
+    if (done) return; done = true;
+    num.textContent = '35';
+    h.classList.add('intro-out');
+    setTimeout(function () { h.classList.remove('intro-on', 'intro-out'); el.remove(); var r = d.querySelector('.intro-red'); if (r) r.remove(); }, 1300);
+  };
+  var tryFinish = function () { if (loaded && performance.now() - t0 > 2300) finish(); };
+  window.addEventListener('load', function () { loaded = true; tryFinish(); setTimeout(tryFinish, Math.max(0, 2300 - (performance.now() - t0))); });
+  setTimeout(finish, 5000);        // если что-то грузится слишком долго — не держим человека
+  el.addEventListener('click', finish);
+})();
+</script>
+
 
 <a class="skip" href="#main">Перейти к&nbsp;содержанию</a>
 
@@ -684,6 +723,6 @@
   </div>
 </footer>
 
-<script src="js/main.js?v=20261120n" defer></script>
+<script src="js/main.js?v=20261122a" defer></script>
 </body>
 </html>
